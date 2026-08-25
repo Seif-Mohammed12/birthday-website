@@ -149,13 +149,22 @@ export function MemoryScrapbook({ onComplete }: MemoryScrapbookProps) {
             onClick={() => setSelectedMemory(null)}
           >
             <motion.div
-              className="bg-white paper-shadow p-4 pb-12 max-w-lg max-h-[90vh] overflow-auto"
+              className="bg-white paper-shadow p-4 pb-12 max-w-lg max-h-[90vh] overflow-auto relative"
               initial={{ scale: 0.8, rotate: -10 }}
               animate={{ scale: 1, rotate: 0 }}
               exit={{ scale: 0.8, rotate: 10 }}
               onClick={(e) => e.stopPropagation()}
               style={{ padding: 'clamp(16px, 4vw, 24px)' }}
             >
+              {/* Cute close button */}
+              <motion.button
+                onClick={() => setSelectedMemory(null)}
+                className="absolute -top-3 -right-3 w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-rose-600 transition-colors z-10"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                ✕
+              </motion.button>
               <div className="w-full min-h-[250px] bg-gradient-to-br from-amber-100 to-rose-100 flex items-center justify-center overflow-hidden rounded" style={{ minHeight: 'clamp(200px, 50vw, 350px)' }}>
                 {config.memories.find(m => m.id === selectedMemory)?.image ? (
                   <img 
