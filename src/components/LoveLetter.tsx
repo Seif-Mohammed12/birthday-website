@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { config } from '../config';
 
 interface LoveLetterProps {
@@ -11,8 +11,19 @@ export function LoveLetter({ onComplete }: LoveLetterProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const fullText = [config.letter.greeting, ...config.letter.body, config.letter.closing, config.letter.signature];
+
+  // Smooth scroll to bottom when content changes
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTo({
+        top: contentRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  }, [displayedText]);
 
   useEffect(() => {
     if (currentIndex >= fullText.length) {
@@ -115,16 +126,23 @@ export function LoveLetter({ onComplete }: LoveLetterProps) {
         }}>✿</div>
         
         {/* Letter content */}
-        <div style={{
-          position: 'relative',
-          fontFamily: 'Dancing Script, cursive',
-          color: '#4A4A4A',
-          fontSize: 'clamp(18px, 5vw, 28px)',
-          lineHeight: 'clamp(32px, 8vw, 44px)',
-          letterSpacing: '0.8px',
-          paddingLeft: 'clamp(32px, 8vw, 48px)',
-          zIndex: 1
-        }}>
+        <div 
+          ref={contentRef}
+          style={{
+            position: 'relative',
+            fontFamily: 'Dancing Script, cursive',
+            color: '#4A4A4A',
+            fontSize: 'clamp(18px, 5vw, 28px)',
+            lineHeight: 'clamp(32px, 8vw, 44px)',
+            letterSpacing: '0.8px',
+            paddingLeft: 'clamp(32px, 8vw, 48px)',
+            zIndex: 1,
+            maxHeight: '70vh',
+            overflowY: 'auto',
+            scrollBehavior: 'smooth',
+            paddingRight: '16px'
+          }}
+        >
           {displayedText.map((line, index) => (
             <motion.p
               key={index}
