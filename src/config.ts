@@ -81,22 +81,6 @@ export const config = {
     },
     {
       id: 3,
-      image: "/images/firstnzool.jpeg",
-      caption: "Our \"first\" date",
-      date: "October 2025",
-      rotation: -1,
-      position: { x: -5, y: 15 }
-    },
-    {
-      id: 4,
-      image: "/images/racer.jpeg",
-      caption: "I have lots of fans ik",
-      date: "June 2026",
-      rotation: 2,
-      position: { x: 8, y: -3 }
-    },
-    {
-      id: 5,
       image: "/images/bahr.jpeg",
       caption: "Best moment of my life ♡",
       date: "August 2026",
@@ -104,7 +88,7 @@ export const config = {
       position: { x: -8, y: 10 }
     },
     {
-      id: 6,
+      id: 4,
       image: "/images/glowing.jpeg",
       caption: "I really love this pic you are glowing",
       date: "August 2026",
@@ -138,21 +122,21 @@ export const config = {
       activity: "Morninggggg Coffee",
       location: "At our famous Starbucks",
       icon: "☕",
-      image: "/images/coffee.webp" // Add image path if desired, e.g., "/images/coffee.jpg"
+      image: "" // Temporarily disabled to reduce load time
     },
     {
       time: "3:00",
       activity: "Cinema timeeeee (Spooderman)",
       location: "CFC Cinema",
       icon: "🎬",
-      image: "/images/spiderman.jpg" // Add image path if desired, e.g., "/images/cinema.jpg"
+      image: "" // Temporarily disabled to reduce load time
     },
     {
       time: "6:00",
       activity: "We nom nom ",
       location: "Retro Restaurant",
       icon: "🍔",
-      image: "/images/retro.webp" // Add image path if desired, e.g., "/images/retro.jpg"
+      image: "" // Temporarily disabled to reduce load time
     },
     {
       time: "???",
