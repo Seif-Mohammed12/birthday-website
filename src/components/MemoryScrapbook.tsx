@@ -33,8 +33,8 @@ export function MemoryScrapbook({ onComplete }: MemoryScrapbookProps) {
             key={memory.id}
             className="absolute cursor-pointer"
             style={{
-              left: `${memory.position.x + 5 + (index % 2) * 45}%`,
-              top: `${memory.position.y + 5 + Math.floor(index / 2) * 40}%`,
+              left: `${5 + (index % 2) * 45}%`,
+              top: `${5 + Math.floor(index / 2) * 40}%`,
               transform: `rotate(${memory.rotation}deg)`,
             }}
             initial={{ opacity: 0, scale: 0.8, rotate: memory.rotation - 10 }}
