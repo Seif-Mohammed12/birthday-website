@@ -79,6 +79,7 @@ export function DayTimeline({ selectedDate, selectedTime }: DayTimelineProps) {
                     src={item.image} 
                     alt={item.activity}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                     }}

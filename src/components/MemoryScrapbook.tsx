@@ -60,6 +60,7 @@ export function MemoryScrapbook({ onComplete }: MemoryScrapbookProps) {
                     src={memory.image} 
                     alt={memory.caption}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                     }}
@@ -161,6 +162,7 @@ export function MemoryScrapbook({ onComplete }: MemoryScrapbookProps) {
                     src={config.memories.find(m => m.id === selectedMemory)?.image}
                     alt={config.memories.find(m => m.id === selectedMemory)?.caption}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                     }}
