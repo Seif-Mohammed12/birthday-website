@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.paper-texture {
+  background-color: #FFFCF2;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(255, 252, 242, 1) 0%, rgba(255, 249, 230, 1) 100%);
+}
+
+.paper-shadow {
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.polaroid-shadow {
+  box-shadow: 
+    3px 4px 12px rgba(0, 0, 0, 0.15),
+    6px 8px 20px rgba(0, 0, 0, 0.1);
+}
