@@ -27,14 +27,14 @@ export function MemoryScrapbook({ onComplete }: MemoryScrapbookProps) {
       </motion.div>
 
       {/* Photo collage */}
-      <div className="max-w-4xl mx-auto relative min-h-[800px] md:min-h-[600px]">
+      <div className="max-w-4xl mx-auto relative min-h-[900px] md:min-h-[700px]">
         {config.memories.map((memory, index) => (
           <motion.div
             key={memory.id}
             className="absolute cursor-pointer"
             style={{
               left: `${5 + (index % 2) * 45}%`,
-              top: `${5 + Math.floor(index / 2) * 40}%`,
+              top: `${5 + Math.floor(index / 2) * 35}%`,
               transform: `rotate(${memory.rotation}deg)`,
             }}
             initial={{ opacity: 0, scale: 0.8, rotate: memory.rotation - 10 }}
@@ -112,7 +112,7 @@ export function MemoryScrapbook({ onComplete }: MemoryScrapbookProps) {
 
       {/* Closing message */}
       <motion.div
-        className="text-center mt-32 mb-8"
+        className="text-center mt-40 mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
