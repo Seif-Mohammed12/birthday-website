@@ -165,12 +165,12 @@ export function MemoryScrapbook({ onComplete }: MemoryScrapbookProps) {
               >
                 ✕
               </motion.button>
-              <div className="w-full min-h-[250px] bg-gradient-to-br from-amber-100 to-rose-100 flex items-center justify-center overflow-hidden rounded" style={{ minHeight: 'clamp(200px, 50vw, 350px)' }}>
+              <div className="w-full h-[400px] bg-gradient-to-br from-amber-100 to-rose-100 flex items-center justify-center overflow-hidden rounded" style={{ height: 'clamp(300px, 60vw, 500px)' }}>
                 {config.memories.find(m => m.id === selectedMemory)?.image ? (
                   <img 
                     src={config.memories.find(m => m.id === selectedMemory)?.image}
                     alt={config.memories.find(m => m.id === selectedMemory)?.caption}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
